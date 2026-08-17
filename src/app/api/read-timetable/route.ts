@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import { GoogleGenAI } from "@google/genai";
-
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
@@ -215,7 +214,7 @@ Extract all timetable classes.
           maxOutputTokens: 12000,
 
           thinkingConfig: {
-            thinkingLevel: "low",
+            thinkingLevel: ThinkingLevel.LOW,
           },
         },
       });
